@@ -40,7 +40,7 @@ function Login() {
       })
       .then((data) => {
         console.log(data);
-        document.cookie = `token=${data.token};max-age=60*60`
+        document.cookie = `token=${data.token};Max-Age=60*60`
         navigate("/")
       })
       .catch((err) => {

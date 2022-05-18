@@ -16,6 +16,9 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
 import { createTheme } from '@mui/material';
 import {useNavigate} from "react-router-dom"
+import cookie from 'cookie';
+
+const cookies = cookie.parse(document.cookie);
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -36,8 +39,9 @@ const Navbar = () => {
 
   const handleLogout = () => {
     setOpen(false);
-    document.cookie= "token=;Max-Age=0"
+    document.cookie= "token=;expires=Thu, 01 Jan 1970 00:00:00 GMT"
     navigate("/login")
+    window.reload()
   }
 
   const handleLogin = () => {
@@ -144,12 +148,20 @@ const Navbar = () => {
             >
               Everydaycritic
             </Typography>
+            {cookies.token && <Button
+            color="inherit"
+            onClick={handleLogout}
+            >
+              Logout
+            </Button>}
+            {!cookies.token &&
             <Button
             color="inherit"
             onClick={handleLogin}
             >
               Login / Sign Up
             </Button>
+            }
           </Toolbar>
         </AppBar>
       </Box>
