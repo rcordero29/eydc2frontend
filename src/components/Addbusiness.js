@@ -57,7 +57,7 @@ const AddBusiness = () => {
         <TextField
           required
           id="address"
-          label="address"
+          label="Street, City, State, Zip"
           type={'text'}
           onChange={(e) => {
             setAddress(e.target.value);

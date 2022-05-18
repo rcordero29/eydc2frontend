@@ -17,6 +17,7 @@ import MenuList from '@mui/material/MenuList';
 import { createTheme } from '@mui/material';
 import {useNavigate} from "react-router-dom"
 import cookie from 'cookie';
+import Map from './maps';
 
 const cookies = cookie.parse(document.cookie);
 
