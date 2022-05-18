@@ -44,8 +44,9 @@ const Navbar = () => {
     navigate("/login")
   }
 
-  const handleHome = () => {
+  const handleHome = (e) => {
     navigate("/")
+    handleClose(e)
   }
 
   const handleAdd = (e) => {
@@ -125,7 +126,7 @@ const Navbar = () => {
                         aria-labelledby="composition-button"
                         onKeyDown={handleListKeyDown}
                       >
-                        <MenuItem onClick={handleClose}>Listings</MenuItem>
+                        <MenuItem onClick={handleHome}>Listings</MenuItem>
                         <MenuItem onClick={handleAdd}>Add a Business</MenuItem>
                         <MenuItem onClick={handleLogout}>Logout</MenuItem>
                       </MenuList>

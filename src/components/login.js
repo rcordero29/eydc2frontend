@@ -13,6 +13,9 @@ function Login() {
 
   const navigate = useNavigate()
 
+  const handleUser = ()=>{
+    navigate('/newuser')
+  }
 
 
   function handleLogin(e) {
@@ -85,7 +88,7 @@ function Login() {
         <Button type="submit" variant="contained" color="primary">
           Login
         </Button>
-        <Button type="submit" variant="contained" color="primary">
+        <Button type="submit" variant="contained" color="primary" onClick={handleUser}>
           Create Account
         </Button>
       </form>
