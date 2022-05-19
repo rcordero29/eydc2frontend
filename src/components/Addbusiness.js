@@ -75,7 +75,7 @@ const AddBusiness = () => {
         <TextField
           required
           id="phonenumber"
-          label="phonenumber"
+          label="phonenumber( NO SPACES )"
           type={'text'}
           onChange={(e) => {
             setPhoneNumber(e.target.value);
