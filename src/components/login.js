@@ -42,6 +42,7 @@ function Login() {
         console.log(data);
         document.cookie = `token=${data.token};Max-Age=60*60`
         navigate("/")
+        window.location.reload()
       })
       .catch((err) => {
         console.log(err);

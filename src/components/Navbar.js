@@ -20,8 +20,10 @@ import cookie from 'cookie';
 import Map from './maps';
 
 const cookies = cookie.parse(document.cookie);
+console.log(cookies);
 
-const Navbar = () => {
+const Navbar = (props) => {
+
   const [open, setOpen] = useState(false);
   const anchorRef = useRef(null);
   const navigate = useNavigate()
@@ -42,11 +44,12 @@ const Navbar = () => {
     setOpen(false);
     document.cookie= "token=;expires=Thu, 01 Jan 1970 00:00:00 GMT"
     navigate("/login")
-    window.reload()
+    window.location.reload()
   }
 
   const handleLogin = () => {
     navigate("/login")
+
   }
 
   const handleHome = (e) => {
